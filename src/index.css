@@ -1,5 +1,5 @@
 body{
-  font-family: sans-serif;
+  font-family: "Inter", "sans-serif";
 }
 
 .theme-switch-wrapper {
@@ -16,6 +16,10 @@ body{
   height: 34px;
 }
 
+.theme-switch input {
+  display: none;
+}
+
 .slider {
   position: absolute;
   top: 0;
@@ -25,6 +29,7 @@ body{
   background-color: black;
   border-radius: 50px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .slider:before {
@@ -32,27 +37,47 @@ body{
   content: "";
   height: 26px;
   width: 26px;
-  border-radius: 50px;
+  border-radius: 50%;
   left: 4px;
   bottom: 4px;
   background-color: white;
-  transition: 0.4s;
+  transition: 0.3s; 
+}
+
+.slider:after {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  right: 2px;
+  top: 2px;
+  background-color: black;
+  transition: 0.3s;
+  opacity: 0.2;
 }
 
 input:checked + .slider {
-  background-color: blue;
+  background-color: rgb(216, 215, 215);
 }
 
 input:checked + .slider:before {
   transform: translateX(26px);
+  background-color: black;
 }
 
-.navbar{
+.navbar,
+.dark-navbar{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px;
+  background-color: white;
+  padding: 50px;
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.navbar{
+  background-color: black;
 }
 
 .navbar-logo-title{
@@ -68,4 +93,39 @@ input:checked + .slider:before {
 .navbar-title{
   color: rgb(8, 193, 245);
   font-size: 3rem;
+}
+
+.dark-main-section,
+.main-section{
+  padding: 60px;
+  height: 900px;
+} 
+
+.main-section{
+  background-color: black;
+}
+
+.dark-main-section-title,
+.main-section-title{ 
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.main-section-title{
+  color: white;
+}
+
+.dark-main-section-facts,
+.main-section-facts{
+  font-size: 1.6rem;
+  margin: 20px;
+}
+
+.main-section-facts{
+  color: white;
+}
+
+ul li::marker {
+  color: rgb(97, 218, 251);
+  font-size: 50px;
 }
